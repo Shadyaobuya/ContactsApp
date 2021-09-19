@@ -5,13 +5,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contactsapp.Models.Contacts
+import com.example.contactsapp.UI.ViewContactActivity
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.Transformation
 
 class ContactsAdapter(var contactsList:List<Contacts>, var context: Context):RecyclerView.Adapter<ContactsViewHolder> (){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
@@ -26,7 +26,7 @@ class ContactsAdapter(var contactsList:List<Contacts>, var context: Context):Rec
         holder.email.text=currentContact.email
         Picasso.get().load(currentContact.imageUrl).placeholder(R.drawable.placeholder).into(holder.imgContacts)  //.placeholder(R.layout.drawable)
         holder.cdContacts.setOnClickListener {
-            var intent=Intent(context,ViewContactActivity::class.java)
+            var intent=Intent(context, ViewContactActivity::class.java)
             intent.putExtra("name",currentContact.contactname)
             intent.putExtra("number",currentContact.phoneNumber)
             intent.putExtra("email",currentContact.email)

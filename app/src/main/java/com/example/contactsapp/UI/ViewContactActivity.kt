@@ -1,9 +1,10 @@
-package com.example.contactsapp
+package com.example.contactsapp.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.contactsapp.R
 import com.squareup.picasso.Picasso
 
 class ViewContactActivity : AppCompatActivity() {
